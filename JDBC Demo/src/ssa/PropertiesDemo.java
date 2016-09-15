@@ -36,12 +36,12 @@ public class PropertiesDemo {
 			myConn= DriverManager.getConnection(theDburl, theUser, thePassword);
 			//create statement
 			stmt=myConn.createStatement();
-			rs=stmt.executeQuery("select * from student where id=200");
+			rs=stmt.executeQuery("select * from student where id=200;");
 			
 			 System.out.println("id" + "\t" + "First Name" + "\t" + "Last Name" + "\t" + "GPA" + "\t" + "SAT" + "\t" + "major_id");
 			 System.out.println("===" + "\t" + "==========" + "\t" + "===========" + "\t" + "===" + "\t" + "====" + "\t" + "========");
 			while (rs.next())
-				System.out.print( String.format("%-3s", rs.getString("id")) + "\t" + String.format("%-8s", rs.getString("first_name")) +"\t"+ String.format("%-9s", rs.getString("last_name")) 
+				System.out.println( String.format("%-3s", rs.getString("id")) + "\t" + String.format("%-8s", rs.getString("first_name")) +"\t"+ String.format("%-9s", rs.getString("last_name")) 
 				+"\t"+ String.format("%-3s", rs.getString("GPA")) +"\t"+ String.format("%-5s", rs.getString("SAT")) +"\t"+  String.format("%-8s", rs.getString("major_id")));
 			
 			
@@ -54,6 +54,5 @@ public class PropertiesDemo {
 				stmt.close();
 		}
 	}
-	public static void displayResults();
 }
 
